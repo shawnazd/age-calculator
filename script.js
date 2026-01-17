@@ -1,74 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const dateInput = document.getElementById('birthdate');
+    const daySelect = document.getElementById('day');
+    const monthSelect = document.getElementById('month');
+    const yearSelect = document.getElementById('year');
     const calculateBtn = document.getElementById('calculate-btn');
     const resultContainer = document.getElementById('result-container');
-    const resultText = document.getElementById('result-text');
+    
+    const ageText = document.getElementById('current-age-text');
+    const birthdayText = document.getElementById('next-birthday-text');
     const nextDateLabel = document.getElementById('next-date-label');
 
-    calculateBtn.addEventListener('click', () => {
-        const birthDateValue = dateInput.value;
+    // Populate Days (1-31)
+    for (let i = 1; i <= 31; i++) {
+        let opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = i;
+        daySelect.appendChild(opt);
+    }
 
-        if (!birthDateValue) {
-            alert("Please select a valid date.");
-            return;
-        }
+    // Populate Years (Current Year down to 1900)
+    const currentYear = new Date().getFullYear();
+    for (let i = currentYear; i >= 1900; i--) {
+        let opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = i;
+        yearSelect.appendChild(opt);
+    }
+
+    calculateBtn.addEventListener('click', () => {
+        const d = parseInt(daySelect.value);
+        const m = parseInt(monthSelect.value);
+        const y = parseInt(yearSelect.value);
 
         const today = new Date();
-        const birthDate = new Date(birthDateValue);
+        const birthDate = new Date(y, m, d);
+
+        // 1. AGE CALCULATION
+        let ageYears = today.getFullYear() - birthDate.getFullYear();
+        let ageMonths = today.getMonth() - birthDate.getMonth();
+        let ageDays = today.getDate() - birthDate.getDate();
+
+        if (ageDays < 0) {
+            ageMonths--;
+            let lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+            ageDays += lastMonth.getDate();
+        }
+        if (ageMonths < 0) {
+            ageYears--;
+            ageMonths += 12;
+        }
+
+        // 2. NEXT BIRTHDAY CALCULATION
+        let nextBday = new Date(today.getFullYear(), m, d);
+        if (nextBday < today) {
+            nextBday.setFullYear(today.getFullYear() + 1);
+        }
+
+        // Exact countdown
+        let diff = nextBday - today;
+        let totalDaysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
         
-        // 1. Determine the "Next Birthday"
-        // Set year to current year
-        let nextBirthday = new Date(
-            today.getFullYear(), 
-            birthDate.getMonth(), 
-            birthDate.getDate()
-        );
+        let monthsRemaining = Math.floor(totalDaysLeft / 30.44);
+        let daysRemaining = Math.floor(totalDaysLeft % 30.44);
 
-        // 2. If birthday already happened this year, set to next year
-        if (nextBirthday < today) {
-            nextBirthday.setFullYear(today.getFullYear() + 1);
-        }
-
-        // 3. Calculate Time Difference
-        const diffInMs = nextBirthday - today;
-        
-        // Calculate months and days remaining
-        // We use a simplified calculation for months/days
-        let months = nextBirthday.getMonth() - today.getMonth();
-        let days = nextBirthday.getDate() - today.getDate();
-
-        // Adjust if days are negative
-        if (days < 0) {
-            months--;
-            // Get last day of previous month
-            const lastMonth = new Date(nextBirthday.getFullYear(), nextBirthday.getMonth(), 0);
-            days += lastMonth.getDate();
-        }
-
-        // Adjust if months are negative (happens when next birthday is next year)
-        if (months < 0) {
-            months += 12;
-        }
-
-        // 4. Update UI
-        displayResult(months, days, nextBirthday);
-    });
-
-    function displayResult(months, days, nextDate) {
-        // Show the container
+        // Update UI
         resultContainer.classList.remove('hidden');
-
-        // Format the text
-        let monthString = months === 1 ? "month" : "months";
-        let dayString = days === 1 ? "day" : "days";
+        ageText.innerText = `${ageYears}y ${ageMonths}m ${ageDays}d`;
         
-        // Case for "Happy Birthday" (Today)
-        if (months === 0 && days === 0) {
-            resultText.innerText = "🎉 Happy Birthday! It's today!";
-            nextDateLabel.innerText = "";
+        if (totalDaysLeft === 365 || totalDaysLeft === 0) {
+            birthdayText.innerText = "🎉 It's Today!";
+            nextDateLabel.innerText = "Enjoy your day!";
         } else {
-            resultText.innerText = `${months} ${monthString} and ${days} ${dayString}`;
-            nextDateLabel.innerText = `Coming up on ${nextDate.toDateString()}`;
+            birthdayText.innerText = `${monthsRemaining} Months, ${daysRemaining} Days`;
+            nextDateLabel.innerText = `Scheduled for: ${nextBday.toLocaleDateString()}`;
         }
-    }
+    });
 });
