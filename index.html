@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Countdown | Modern Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            <h1>Birthday Calculator</h1>
+            <p class="subtitle">Enter your birth date to see the countdown</p>
+            
+            <div class="input-group">
+                <label for="birthdate">Date of Birth</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </div>
+
+            <button id="calculate-btn">Calculate Next Birthday</button>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="divider"></div>
+                <h3>Your next birthday is in:</h3>
+                <div class="countdown-display">
+                    <span id="result-text">-- months -- days</span>
+                </div>
+                <p id="next-date-label" class="next-date-label"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
