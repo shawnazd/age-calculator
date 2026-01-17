@@ -2,8 +2,6 @@
 
 A sleek, modern, and high-performance web application designed to calculate your exact age and track the countdown to your next birthday. Built with **Glassmorphism** aesthetics and optimized for a seamless mobile experience.
 
-
-
 ---
 
 ### 🌐 [Live Visit: View App 🚀](https://shawnazd.github.io/age-calculator/)
@@ -12,7 +10,7 @@ A sleek, modern, and high-performance web application designed to calculate your
 
 ## ✨ Features
 
-* ** 정확한 Age Calculation:** Get your current age in Years, Months, and Days instantly 🗓️.
+* **✅ Accurate Age Calculation:** Get your current age in Years, Months, and Days instantly 🗓️.
 * **🎉 Birthday Countdown:** See exactly how long you have to wait for your next celebration (Months & Days).
 * **💎 Glassmorphism UI:** A beautiful dark-themed interface with frosted-glass effects and soft shadows.
 * **📱 Ultra Responsive:** Works perfectly on everything from small smartphones to large 4K monitors.
@@ -24,7 +22,7 @@ A sleek, modern, and high-performance web application designed to calculate your
 ## 📸 Preview
 
 ### Desktop & Mobile Interface
-![App Screenshot](./screenshot/screenshot%201.png)
+![App Screenshot](screenshot/screenshot%201.png)
 
 ---
 
