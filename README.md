@@ -5,7 +5,7 @@ A premium, responsive web application to calculate your exact age and the time r
 ---
 
 ## 📸 Preview
-![App Screenshot](screenshot/screenshot1.png)
+![App Screenshot](screenshots/screenshot1.png)
 
 ---
 
