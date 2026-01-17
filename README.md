@@ -1,63 +1,41 @@
-# 🎂 Age & Birthday Calculator 🚀
+# 🎂 Age & Birthday Calculator
 
-A sleek, modern, and high-performance web application designed to calculate your exact age and track the countdown to your next birthday. Built with **Glassmorphism** aesthetics and optimized for a seamless mobile experience.
-
----
-
-### 🌐 [Live Visit: View App 🚀](https://shawnazd.github.io/age-calculator/)
-
----
-
-## ✨ Features
-
-* **✅ Accurate Age Calculation:** Get your current age in Years, Months, and Days instantly 🗓️.
-* **🎉 Birthday Countdown:** See exactly how long you have to wait for your next celebration (Months & Days).
-* **💎 Glassmorphism UI:** A beautiful dark-themed interface with frosted-glass effects and soft shadows.
-* **📱 Ultra Responsive:** Works perfectly on everything from small smartphones to large 4K monitors.
-* **⚡ Lightweight:** No frameworks, no libraries, just pure Vanilla JavaScript for lightning-fast loading.
-* **🖱️ Improved Selectors:** Custom dark-themed dropdowns for easy date selection on any device.
+A premium, responsive web application to calculate your exact age and the time remaining until your next birthday. Designed with a modern dark-mode Glassmorphism UI.
 
 ---
 
 ## 📸 Preview
+![App Screenshot](screenshot/screenshot1.png)
 
-### Desktop & Mobile Interface
-![App Screenshot](screenshot/screenshot%201.png)
+---
+
+## 🚀 Live Visit
+**Check out the live app here:** 👉 [**https://shawnazd.github.io/age-calculator/**](https://shawnazd.github.io/age-calculator/)
+
+---
+
+## ✨ Features
+* 🗓️ **Precise Age:** Calculates your life duration in years, months, and days.
+* ⏳ **Birthday Countdown:** Automatically tells you exactly how much time is left until your next birthday.
+* 🌑 **Dark Mode by Default:** Easy on the eyes with a sleek, modern aesthetic.
+* 💎 **Glassmorphism Design:** Uses frosted glass effects and soft shadows for a high-end feel.
+* 📱 **Fully Responsive:** Adapts perfectly to mobile phones, tablets, and desktops.
+* 🖱️ **User-Friendly Selectors:** Custom dark-themed dropdowns for smooth date entry on all browsers.
 
 ---
 
 ## 🛠️ Built With
-
-* **HTML5** - For the modern semantic structure 🧱.
-* **CSS3** - Custom properties, animations, and Backdrop Filters 🎨.
-* **JavaScript** - Custom logic for date calculations and UI manipulation 🧠.
-
----
-
-## 🚀 How to Host Your Own
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [https://github.com/shawnazd/age-calculator.git](https://github.com/shawnazd/age-calculator.git)
-    ```
-2.  **Open the Project:**
-    Open `index.html` in any browser to see it in action.
-3.  **Deploy to GitHub Pages:**
-    * Push your code to GitHub.
-    * Go to **Settings > Pages**.
-    * Select the **main** branch and click **Save**.
-    * Your site is now live! 🌎
+* **HTML5** - Semantic structure for modern web standards.
+* **CSS3** - Advanced styling including backdrop-filters and Flexbox.
+* **Vanilla JavaScript** - Clean, framework-free logic for date calculations.
 
 ---
 
-## 📁 Project Structure
-
+## 📂 Project Structure
 ```text
 age-calculator/
-│
-├── index.html       # Main structure
-├── style.css       # Glassmorphism & Responsive design
-├── script.js      # Age & Countdown logic
-├── screenshot/    # Visual assets
-│   └── screenshot 1.png
-└── README.md      # Documentation
+├── index.html       # Main Page
+├── style.css        # Modern Styles
+├── script.js       # Calculation Logic
+└── screenshot/      # Image assets
+    └── screenshot 1.png
